@@ -3,7 +3,7 @@ class TopicsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_topic, only: [:edit, :update, :destroy]
 
-  
+
 
   def new
     @topic = Topic.new
@@ -14,6 +14,7 @@ class TopicsController < ApplicationController
     @topic.user_id = current_user.id
     if @topic.save
       redirect_to root_path, notice: " 投稿しました！"
+      NoticeMailer.sendmail_topic(@topic).deliver
     else
       render 'new'
     end
