@@ -1,0 +1,44 @@
+body{
+  background-color:#EEEEEE;
+}
+
+header{
+background-color: #365899;
+}
+
+header li a{
+  list-style:none;
+  color: #FFF;
+  font-size: 100%;
+  font-weight: bold;
+  display: inline-block;
+  margin: 0px 10px 0px 10px;
+  padding: 10px;
+}
+
+header li{
+  list-style:none;
+  font-size: 100%;
+  font-weight: bold;
+  display: inline-block;
+  margin: 0px 10px 0px 10px;
+  padding: 10px;
+}
+
+main{
+  text-align: center;
+  margin-top: 80px;
+}
+
+.main-status{
+  padding: 10px;
+}
+
+.flash {
+  color: #365899;
+  padding-top: 10px;
+}
+
+// Place all the styles related to the top controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/

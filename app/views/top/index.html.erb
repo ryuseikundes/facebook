@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>facebook</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+  <li><a href="#">facebook</a></li>
+  <li><a href="topics/new">投稿</a></li>
+  <% if user_signed_in? %>
+  <li><%= link_to 'マイページ', edit_user_registration_path %></li>
+  <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+<% else %>
+  <li><%= link_to 'ログイン', new_user_session_path  %></li>
+  <li><%= link_to 'サインアップ', new_user_registration_path %></li>
+<% end %>
+</header>
+<main>
+
+
+  <p class="flash"><%= notice %><%= alert %></p>
+  <h3>投稿一覧</h3>
+  <% @topics.each do |topic| %>
+  <div class="main-status">
+    <p>タイトル:<%= topic.title %></p>
+    <p>本文:<%= topic.content %></p>
+  <%= link_to "編集", edit_topic_path(topic.id), class: 'btn btn-default btn-sm btn-success'  %>
+  <%= link_to "削除", topic_path(topic.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+  </div>
+  <% end %>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+</boby>
