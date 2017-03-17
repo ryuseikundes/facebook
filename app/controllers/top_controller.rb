@@ -3,4 +3,5 @@ class TopController < ApplicationController
     @topics = Topic.all
   end
 
+
 end

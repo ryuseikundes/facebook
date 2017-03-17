@@ -2,9 +2,13 @@ Rails.application.routes.draw do
 
 
 
-  root to: "top#index"
 
-  resources :topics
+
+  root to: "topics#index"
+
+  resources :topics do
+   resources :comments
+  end
 
   devise_for :users, controllers: {
     registrations: "users/registrations",

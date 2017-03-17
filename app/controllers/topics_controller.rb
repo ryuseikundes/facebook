@@ -3,7 +3,9 @@ class TopicsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_topic, only: [:edit, :update, :destroy]
 
-
+  def index
+    @topics = Topic.all
+  end
 
   def new
     @topic = Topic.new
@@ -18,6 +20,12 @@ class TopicsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def show
+   @topic = Topic.find(params[:id])
+   @comment = @topic.comments.build
+   @comments = @topic.comments
   end
 
   def edit
