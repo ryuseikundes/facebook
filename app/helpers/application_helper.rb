@@ -8,7 +8,7 @@ module ApplicationHelper
     else
       img_url = 'no_image.png'
     end
-    image_tag(img_url, alt: user.name, size:"50×50"%)
+    image_tag(img_url, alt: user.name, class:"profile-image")
   end
 end
 
