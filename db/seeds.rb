@@ -1,4 +1,4 @@
-n = 5
+n = 1
 
 while n <= 20
   name = Faker::Pokemon.name
