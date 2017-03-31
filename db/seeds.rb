@@ -1,17 +1,8 @@
-n = 1
-
+n = 4
 while n <= 20
-  name = Faker::Pokemon.name
-  email = Faker::Internet.email
-  password = Faker::Internet.password
-  uid = SecureRandom.uuid
-
-  User.create(
-    id: n,
-    name: name,
-    email: email,
-    password: password,
-    uid: uid
+  Topic.create(
+    title: "test",
+    user_id: n
   )
   n = n + 1
 end
