@@ -7,6 +7,7 @@ while n <= 20
   uid = SecureRandom.uuid
 
   User.create(
+    id: n,
     name: name,
     email: email,
     password: password,
