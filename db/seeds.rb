@@ -1,17 +1,13 @@
-n = 1
-
-while n <= 20
+20.times do
   name = Faker::Pokemon.name
   email = Faker::Internet.email
   password = Faker::Internet.password
   uid = SecureRandom.uuid
 
   User.create(
-    id: n,
     name: name,
     email: email,
     password: password,
     uid: uid
   )
-  n = n + 1
 end
